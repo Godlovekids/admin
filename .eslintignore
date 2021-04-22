@@ -1,0 +1,5 @@
+src/assets
+public
+dist
+.cz-config.js
+vite.config.ts
