@@ -1,4 +1,4 @@
-# Vue 3 + Typescript + Vite + ElementPlus + Axios + Vuex + VueRouter
+# Vue3 + Typescript + Vite + ElementPlus + Axios + Vuex + VueRouter
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
 
