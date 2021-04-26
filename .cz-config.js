@@ -13,7 +13,6 @@ module.exports = {
   // scope 类型（定义之后，可通过上下键选择）
   scopes: [
     ['components', '组件相关'],
-    ['hooks', 'hook相关'],
     ['utils', 'utils相关'],
     ['styles', '样式相关'],
     ['deps', '项目依赖'],
@@ -53,11 +52,11 @@ module.exports = {
     scope: '\n选择一个scope:',
     // 选择 scope: custom 时会出下面的提示
     customScope: '请输入自定义的scope:',
-    subject: '填写变更描述:',
-    body: '填写更加详细的变更描述:',
-    breaking: '非兼容性重大的变更:',
-    footer: '所有变更的issues closed:',
-    confirmCommit: '提交代码:'
+    subject: '简短描述:',
+    body: '详细描述:',
+    breaking: '非兼容性重大变更:',
+    footer: '关闭的issues列表:',
+    confirmCommit: '提交?'
   },
 
   // 设置只有 type 选择了 feat 或 fix，才询问 breaking message
