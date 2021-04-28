@@ -1,24 +1,29 @@
 module.exports = {
   // type 类型（定义之后，可通过上下键选择）
-  types: [
-    { value: 'feat', name: 'feat:        新增功能' },
-    { value: 'fix', name: 'fix:         修复bug' },
-    { value: 'style', name: 'style:       代码格式' },
-    { value: 'refactor', name: 'refactor:    代码重构' },
-    { value: 'perf', name: 'perf:        性能优化' },
-    { value: 'build', name: 'build:       构建流程变更' },
-    { value: 'revert', name: 'revert:      回滚代码' }
-  ],
+    types: [
+      {      value: 'init',      name: 'init:     初始提交'    },
+      {      value: 'feat',      name: 'feat:     增加功能'    },
+      {      value: 'fix',      name: 'fix:      修复bug'    },
+      {      value: 'ui',      name: 'ui:       更新UI'    },
+      {      value: 'refactor',      name: 'refactor: 代码重构'    },
+      {      value: 'release',      name: 'release:  发布'    },
+      {      value: 'deploy',      name: 'deploy:   部署'    },
+      {      value: 'docs',      name: 'docs:     修改文档'    },
+      {      value: 'chore',      name: 'chore:    更改配置'    },
+      {      value: 'style',      name: 'style:    样式修改'    },
+      {      value: 'revert',      name: 'revert:   版本回退'    },
+      {      value: 'add',      name: 'add:      添加依赖'    },
+      {      value: 'minus',      name: 'minus:    版本回退'    },
+      {      value: 'del',      name: 'del:      删除代码'    }
+    ],
 
   // scope 类型（定义之后，可通过上下键选择）
   scopes: [
-    ['components', '组件相关'],
-    ['utils', 'utils相关'],
-    ['styles', '样式相关'],
+    ['component', '组件相关'],
+    ['util', '公共相关'],
+    ['style', '样式相关'],
     ['deps', '项目依赖'],
     ['other', '其他修改'],
-    // 如果选择 custom，后面会让你再输入一个自定义的 scope。也可以不设置此项，把后面的 allowCustomScopes 设置为 true
-    ['custom', '自定义']
   ].map(([value, description]) => {
     return {
       value,
@@ -27,12 +32,11 @@ module.exports = {
   }),
 
   // 是否允许自定义填写 scope，在 scope 选择的时候，会有 empty 和 custom 可以选择。
-  // allowCustomScopes: true,
+  allowCustomScopes: true,
   // allowTicketNumber: false,
   // isTicketNumberRequired: false,
   // ticketNumberPrefix: 'TICKET-',
   // ticketNumberRegExp: '\\d{1,5}',
-
 
   // 针对每一个 type 去定义对应的 scopes，例如 fix
   /*
@@ -48,15 +52,15 @@ module.exports = {
 
   // 交互提示信息
   messages: {
-    type: '选择你要提交的类型:',
-    scope: '\n选择一个scope:',
+    type: '选择更改类型:',
+    scope: '更改的范围:',
     // 选择 scope: custom 时会出下面的提示
     customScope: '请输入自定义的scope:',
     subject: '简短描述:',
     body: '详细描述:',
     breaking: '非兼容性重大变更:',
     footer: '关闭的issues列表:',
-    confirmCommit: '提交?'
+    confirmCommit: '确认提交?'
   },
 
   // 设置只有 type 选择了 feat 或 fix，才询问 breaking message
