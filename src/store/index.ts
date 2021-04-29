@@ -14,7 +14,7 @@ const store = createStore({
 	plugins: [
 		createPersistedState({
 			key: 'adminData', // 浏览器中的名字
-			paths: ['user'] // 需要存储起来的参数模块
+			paths: ['user.token'] // 需要存储起来的参数模块
 		})
 	]
 });
