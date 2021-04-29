@@ -19,6 +19,15 @@ export default defineConfig({
 			symbolId: 'icon-[dir]-[name]'
 		})
 	],
+	// css配置
+	css: {
+		preprocessorOptions: {
+			// 注入全局scss变量
+			scss: {
+				additionalData: `@import "@style/variables.scss";`
+			}
+		}
+	},
 	resolve: {
 		// 别名
 		alias: [

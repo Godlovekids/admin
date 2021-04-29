@@ -18,14 +18,12 @@
 					v-model="loginFormData.password"
 					placeholder="请输入密码"
 					show-password
-					@keyup.enter.native="login"
+					@keyup.enter="login"
 				></el-input>
 			</el-form-item>
 			<el-row class="login-button">
 				<el-button @click="reset(loginForm)">重置</el-button>
-				<el-button :loading="configData.loading" type="primary" @click.native="login"
-					>登陆</el-button
-				>
+				<el-button :loading="configData.loading" type="primary" @click="login">登陆</el-button>
 			</el-row>
 		</el-form>
 	</div>
@@ -85,8 +83,7 @@ const login = (): void => {
 				.then(() => {
 					ElMessage.success('登录成功');
 					configData.value.loading = false;
-					// router.push({ path: (redirect.value || '/') as string });
-					router.push({ path: '/' });
+					router.push({ path: (redirect.value ?? '/') as string });
 				})
 				.catch((error: string | undefined) => {
 					configData.value.loading = false;

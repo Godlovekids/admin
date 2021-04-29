@@ -1,35 +1,33 @@
 // 路由定义
 import type { RouteRecordRaw } from 'vue-router';
 // 布局组件
-import Layout from '@layout/layout.vue';
-// 路由数据
-const routes: RouteRecordRaw[] = [
+const Layout = () => import('@layout/layout.vue');
+
+const limitRoutes: RouteRecordRaw[] = [
 	{
-		path: '/login',
-		name: 'login',
-		meta: {
-			hidden: true,
-			title: '登录'
-		},
-		component: () => import('@views/login/login.vue')
-	},
-	{
-		path: '/',
+		path: '/work',
+		name: 'work',
 		component: Layout,
-		redirect: '/home',
+		redirect: '/work/analysis',
+		meta: {
+			id: '1',
+			title: '系统管理',
+			icon: 'config'
+		},
 		children: [
 			{
-				path: 'home',
-				name: 'home',
-				component: () => import('@views/home/home.vue'),
-				meta: { title: '首页', icon: 'dashboard' }
+				path: '/work/analysis',
+				name: 'analysis',
+				component: () => import('@views/work/analysis.vue'),
+				meta: { id: '2', title: '分析台', icon: 'aiming' }
+			},
+			{
+				path: '/work/analysis2',
+				name: 'analysis2',
+				component: () => import('@views/work/analysis2.vue'),
+				meta: { id: '3', title: '分析台2', icon: 'aiming' }
 			}
 		]
 	}
-	// {
-	// 	path: '*',
-	// 	name: '404',
-	// 	component: () => import('@views/home/home.vue')
-	// }
 ];
-export default routes;
+export default limitRoutes;

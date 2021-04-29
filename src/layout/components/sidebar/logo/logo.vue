@@ -1,12 +1,24 @@
 <template>
-	<el-row>
+	<el-row class="logo">
 		<el-image :src="logo"></el-image>
+		<span>后台管理系统</span>
 	</el-row>
 </template>
 
 <script lang="ts" setup>
 // eslint-disable-next-line no-unused-vars
-import logo from '@icons/svg/brain.svg';
+import logo from '@assets/logo/logo.png';
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.logo {
+	line-height: 60px;
+	align-items: center;
+	color: #fff;
+	.el-image {
+		width: 32px;
+		height: 32px;
+		margin: 0 16px;
+	}
+}
+</style>

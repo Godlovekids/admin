@@ -17,7 +17,8 @@
 			"@store/*": ["src/store/*"],
 			"@utils/*": ["src/utils/*"],
 			"@views/*": ["src/views/*"],
-			"@tyle/*": ["src/views/*"],
+			"@style/*": ["src/style/*"],
+			"@assets/*": ["src/assets/*"],
 			"@/*": ["src/*"],
 		 }
   },

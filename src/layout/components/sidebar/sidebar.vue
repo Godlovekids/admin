@@ -1,40 +1,48 @@
 <template>
-	<el-menu
-		:default-active="activeMenu"
-		:collapse="isCollapse"
-		:background-color="variables.menuBg"
-		:text-color="variables.menuText"
-		:active-text-color="variables.menuActiveText"
-		router
-		class="menu-list"
-	>
-		<Menu :menuList="menuList"></Menu>
-	</el-menu>
+	<div class="sidebar">
+		<logo></logo>
+		<el-scrollbar>
+			<el-menu
+				:default-active="activeMenu"
+				:collapse="isCollapse"
+				:unique-opened="false"
+				:background-color="variables.menuBg"
+				:text-color="variables.menuText"
+				:active-text-color="variables.menuActiveText"
+				router
+				class="menu-list"
+			>
+				<menu-item v-for="v in menuListData" :key="v.path" :index="v.path" :menu-list="v" />
+			</el-menu>
+		</el-scrollbar>
+	</div>
 </template>
 
 <script lang="ts" setup>
 import store from '@store/index';
-import router from '@router/index';
 // eslint-disable-next-line no-unused-vars
 import variables from '@style/variables.module.scss';
+// eslint-disable-next-line no-unused-vars
+import menuItem from '@layout/components/sidebar/menuItem.vue';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { filterMenu } from '@utils/auth';
+import { routes } from '@router/index';
 // eslint-disable-next-line no-unused-vars
-import Menu from './menu.vue';
+import logo from './logo/logo.vue';
 // 菜单数据
 // eslint-disable-next-line no-unused-vars
-const menuList = computed(() => {
-	return router.options.routes.filter((item) => !(item as any)?.meta?.hidden);
+const menuListData = computed(() => {
+	return filterMenu(
+		routes.filter((item) => !(item as any).hidden).concat(store.getters.limitRoutes)
+	);
 });
 // 当前激活的菜单
+const route = useRoute();
 // eslint-disable-next-line no-unused-vars
 const activeMenu = computed(() => {
-	const route = useRoute();
-	const { meta, path } = route;
-	if (meta.activeMenu) {
-		return meta.activeMenu;
-	}
-	return path;
+	if (route.meta.activeMenu) return route.meta.activeMenu;
+	return route.path;
 });
 // 展开状态标识
 // eslint-disable-next-line no-unused-vars
@@ -44,7 +52,11 @@ const isCollapse = computed(() => {
 </script>
 
 <style lang="scss">
-.menu-list {
-	width: 210px;
+.sidebar {
+	width: $sideBarWidth;
+	background-color: $menuBg;
+	.el-menu-item.is-active {
+		background-color: $menuBgHover !important;
+	}
 }
 </style>

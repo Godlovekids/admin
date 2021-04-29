@@ -5,8 +5,8 @@ module.exports = {
 		node: true
 	},
 	extends: [
-		'plugin:vue/essential',
 		'airbnb-base',
+		'plugin:vue/vue3-essential',
 		'plugin:prettier/recommended' // 添加 prettier 插件
 	],
 	parserOptions: {
@@ -20,13 +20,13 @@ module.exports = {
 		'import/extensions': 'off',
 		'import/no-absolute-path': 'off',
 		'import/no-extraneous-dependencies': 'off',
-		'vue/no-multiple-template-root': 'off',
-		'no-param-reassign': [
-			'error',
-			{
-				props: true,
-				ignorePropertyModificationsFor: ['state', 'config']
-			}
-		]
+		'vue/no-multiple-template-root': 'off'
+		// 'no-param-reassign': [
+		// 	'error',
+		// 	{
+		// 		props: true,
+		// 		ignorePropertyModificationsFor: ['state', 'config']
+		// 	}
+		// ]
 	}
 };
