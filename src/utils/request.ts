@@ -4,6 +4,8 @@ import axios from 'axios';
 import { ElMessageBox, ElMessage } from 'element-plus';
 // 商店
 import store from '@store/index';
+// 删除token
+import { getToken, removeToken } from '@utils/auth';
 // 基础路径
 const baseURL = import.meta.env.VITE_BASEURL as string;
 //  封装请求
@@ -43,11 +45,15 @@ service.interceptors.response.use(
 			});
 			if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
 				// 重新登陆
-				ElMessageBox.confirm('重新登陆?', '提示', {
+				ElMessageBox.confirm('登录信息失效,重新登陆?', '提示', {
 					confirmButtonText: '确定',
 					cancelButtonText: '取消',
 					type: 'warning'
 				}).then(() => {
+					// 判断token存在的话就删除存在local过期的token
+					if (getToken()) {
+						removeToken();
+					}
 					window.location.reload();
 				});
 			}
