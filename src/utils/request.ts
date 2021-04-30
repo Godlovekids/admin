@@ -1,8 +1,8 @@
 // axios
 import axios from 'axios';
-// 弹窗组件
+// 消息确认 消息
 import { ElMessageBox, ElMessage } from 'element-plus';
-// store
+// 商店
 import store from '@store/index';
 // 基础路径
 const baseURL = import.meta.env.VITE_BASEURL as string;
@@ -20,8 +20,9 @@ const service = axios.create({
 service.interceptors.request.use(
 	(config) => {
 		// 处理token
-		if (store.getters.token) {
-			config.headers.token = store.getters.token;
+		if (store().token) {
+			// eslint-disable-next-line no-param-reassign
+			config.headers.token = store().token;
 		}
 		return config;
 	},
@@ -42,7 +43,7 @@ service.interceptors.response.use(
 			});
 			if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
 				// 重新登陆
-				ElMessageBox.confirm('你已退出,去登陆?', '提示', {
+				ElMessageBox.confirm('重新登陆?', '提示', {
 					confirmButtonText: '确定',
 					cancelButtonText: '取消',
 					type: 'warning'

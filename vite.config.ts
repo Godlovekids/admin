@@ -31,6 +31,9 @@ export default defineConfig({
 	resolve: {
 		// 别名
 		alias: [
+			// 解决scss路径引入问题
+			{ find: /^~/, replacement: '' },
+			// 系统目录别名
 			{ find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
 			{
 				find: '@components',

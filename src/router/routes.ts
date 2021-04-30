@@ -5,27 +5,27 @@ const Layout = () => import('@layout/layout.vue');
 
 const limitRoutes: RouteRecordRaw[] = [
 	{
-		path: '/work',
-		name: 'work',
+		path: '/system',
+		name: 'system',
 		component: Layout,
-		redirect: '/work/analysis',
+		redirect: '/system/analysis',
 		meta: {
 			id: '1',
 			title: '系统管理',
-			icon: 'config'
+			icon: 'system'
 		},
 		children: [
 			{
-				path: '/work/analysis',
+				path: '/system/analysis',
 				name: 'analysis',
-				component: () => import('@views/work/analysis.vue'),
-				meta: { id: '2', title: '分析台', icon: 'aiming' }
+				component: () => import('@views/system/analysis.vue'),
+				meta: { id: '2', title: '分析台', icon: 'analysis' }
 			},
 			{
-				path: '/work/analysis2',
-				name: 'analysis2',
-				component: () => import('@views/work/analysis2.vue'),
-				meta: { id: '3', title: '分析台2', icon: 'aiming' }
+				path: '/system/airplay',
+				name: 'airplay',
+				component: () => import('@views/system/airplay.vue'),
+				meta: { id: '3', title: '投屏器', icon: 'airplay' }
 			}
 		]
 	}

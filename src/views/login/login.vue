@@ -78,8 +78,8 @@ const login = (): void => {
 	loginForm.value!.validate((valid: boolean) => {
 		if (valid) {
 			configData.value.loading = true;
-			store
-				.dispatch('user/login', loginFormData)
+			store()
+				.login(loginFormData)
 				.then(() => {
 					ElMessage.success('登录成功');
 					configData.value.loading = false;

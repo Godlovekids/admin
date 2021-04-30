@@ -1,4 +1,4 @@
-// 创建router方法  history模式
+// 创建router方法  history模式方法
 import { createRouter, createWebHistory } from 'vue-router';
 // 路由定义
 import type { RouteRecordRaw } from 'vue-router';
@@ -27,13 +27,13 @@ export const routes: RouteRecordRaw[] = [
 		path: '/dashboard',
 		component: Layout,
 		redirect: '/dashboard/workbench',
-		meta: { title: '仪表盘', icon: 'aiming' },
+		meta: { title: '仪表盘' },
 		children: [
 			{
 				name: 'workbench',
 				path: '/dashboard/workbench',
-				meta: { title: '工作台', icon: 'config' },
-				component: () => import('@views/system/workbench.vue')
+				meta: { title: '工作台', icon: 'workbench' },
+				component: () => import('@views/dashboard/workbench.vue')
 			}
 		]
 	},
@@ -54,16 +54,14 @@ export const routes: RouteRecordRaw[] = [
 	}
 ];
 
-export const asyncRouter: RouteRecordRaw[] = [
+export const errorRouter: RouteRecordRaw[] = [
 	{
 		path: '/:pathMatch(.*)*',
 		meta: {
 			title: 'NotFound',
 			hidden: true
 		},
-		redirect: {
-			name: '404'
-		}
+		redirect: '/error/404'
 	}
 ];
 // 创建router

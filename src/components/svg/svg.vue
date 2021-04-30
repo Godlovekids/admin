@@ -1,6 +1,6 @@
 <template>
-	<svg :class="svgClass" v-bind="$attrs" :style="{ color: color }">
-		<use :xlink:href="iconName" />
+	<svg aria-hidden="true" class="svg-icon">
+		<use :xlink:href="symbolId" :fill="props.color" />
 	</svg>
 </template>
 
@@ -8,32 +8,31 @@
 import { defineProps, computed } from 'vue';
 
 const props = defineProps({
+	// 前缀
+	prefix: {
+		type: String,
+		default: 'icon'
+	},
+	// 标识
 	name: {
 		type: String,
 		required: true
 	},
+	// 颜色
 	color: {
 		type: String,
-		default: '#fff'
+		default: '#333'
 	}
 });
 // eslint-disable-next-line no-unused-vars
-const iconName = computed(() => `#icon-${props.name}`);
-// eslint-disable-next-line no-unused-vars
-const svgClass = computed(() => {
-	if (props.name) {
-		return `svg-icon icon-${props.name}`;
-	}
-	return 'svg-icon';
-});
+const symbolId = computed(() => `#${props.prefix}-${props.name}`);
 </script>
 
 <style lang="scss">
 .svg-icon {
-	width: 1em;
-	height: 1em;
+	width: 1.6em;
+	height: 1.6em;
 	margin: 0 10px;
-	fill: currentColor;
 	vertical-align: middle;
 }
 </style>

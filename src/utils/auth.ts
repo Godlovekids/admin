@@ -1,5 +1,8 @@
 // 路由定义
 import type { RouteRecordRaw } from 'vue-router';
+
+// token——————
+
 // 储存位置
 const saveStorage = localStorage;
 // token对应的key
@@ -17,11 +20,12 @@ export function removeToken(): void {
 	saveStorage.removeItem(tokenKey);
 }
 
+// 菜单——————
+
 // 判断是否存在菜单
 export function hasPermission(idList: Array<string>, route: RouteRecordRaw): boolean {
-	return !!idList.includes((route as any)?.meta?.id);
+	return !!idList.includes((route as any).meta?.id);
 }
-
 // 递归处理权限路由
 export function filterAsyncRoutes(routes: RouteRecordRaw[], idList: string[]): RouteRecordRaw[] {
 	const res: RouteRecordRaw[] = [];
@@ -36,7 +40,6 @@ export function filterAsyncRoutes(routes: RouteRecordRaw[], idList: string[]): R
 	});
 	return res;
 }
-
 // 过滤隐藏的菜单，并提取单条的子菜单
 export function filterMenu(list: any[]) {
 	const f = (menuList: any[]) => {
