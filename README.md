@@ -1,4 +1,4 @@
-# Vue3 + Typescript + Vite + ElementPlus + Sass + Axios + Vuex + VueRouter
+# Vue3 + Typescript + Vite + ElementPlus + Sass + Axios + VueRouter + Pinia
 
 ### `<script setup>`
 
