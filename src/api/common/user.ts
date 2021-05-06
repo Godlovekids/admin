@@ -2,7 +2,7 @@
 import request from '@utils/request';
 
 // 用户信息
-export function info(params: unknown) {
+export function info(params: unknown): Promise<object> {
 	return request({
 		url: '/user/info',
 		method: 'get',
@@ -10,7 +10,7 @@ export function info(params: unknown) {
 	});
 }
 // 登录
-export function login(data: unknown) {
+export function login(data: unknown): Promise<object> {
 	return request({
 		url: '/user/login',
 		method: 'post',

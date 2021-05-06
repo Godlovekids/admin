@@ -4,7 +4,6 @@ module.exports = {
       {      value: 'init',      name: 'init:     初始提交'    },
       {      value: 'feat',      name: 'feat:     增加功能'    },
       {      value: 'fix',      name: 'fix:      修复bug'    },
-      {      value: 'ui',      name: 'ui:       更新UI'    },
       {      value: 'refactor',      name: 'refactor: 代码重构'    },
       {      value: 'release',      name: 'release:  发布'    },
       {      value: 'deploy',      name: 'deploy:   部署'    },

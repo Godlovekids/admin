@@ -1,5 +1,5 @@
 <template>
-	<div class="app-sidebar">
+	<div class="app-sidebar" :class="{ collapse: collapse }">
 		<logo></logo>
 		<el-scrollbar class="app-scroll-menu">
 			<el-menu
@@ -54,13 +54,41 @@ const collapse = computed(() => {
 	width: $sideBarWidth;
 	background-color: $menuBg;
 	.app-scroll-menu {
-		height: calc(100% - 60px);
+		height: calc(100vh - 60px);
 		.app-menu-list {
 			border-right: 0 none;
-			.el-menu-item.is-active {
-				background-color: $menuBgHover !important;
+			.el-menu-item {
+				&.is-active,
+				&:hover {
+					background-color: $menuBgHover !important;
+				}
+			}
+			.app-menu-title {
+				padding-left: 10px;
+			}
+			.el-menu-item-group__title {
+				padding-bottom: 0;
+				padding-top: 0;
 			}
 		}
 	}
+}
+.app-menu-submenu {
+	.el-menu-item {
+		&.is-active,
+		&:hover {
+			background-color: $menuBgHover !important;
+		}
+	}
+	.app-menu-title {
+		padding-left: 10px;
+	}
+	.el-menu-item-group__title {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+}
+.app-sidebar.collapse {
+	width: auto;
 }
 </style>

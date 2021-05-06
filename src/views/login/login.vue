@@ -9,11 +9,11 @@
 		>
 			<el-row class="login-title">Login</el-row>
 			<el-form-item prop="username">
-				<svg-icon name="user"></svg-icon>
+				<svg-icon name="user" size="1.2em"></svg-icon>
 				<el-input v-model="loginFormData.username" placeholder="请输入用户名" />
 			</el-form-item>
 			<el-form-item prop="password">
-				<svg-icon name="password"></svg-icon>
+				<svg-icon name="password" size="1.2em"></svg-icon>
 				<el-input
 					v-model="loginFormData.password"
 					placeholder="请输入密码"
@@ -22,7 +22,7 @@
 				></el-input>
 			</el-form-item>
 			<el-row class="login-button">
-				<el-button @click="reset(loginForm)">重置</el-button>
+				<el-button @click="resetForm(loginForm)">重置</el-button>
 				<el-button :loading="configData.loading" type="primary" @click="login">登陆</el-button>
 			</el-row>
 		</el-form>
@@ -31,12 +31,17 @@
 
 <script lang="ts" setup>
 import { onMounted, ref, watch } from 'vue';
+// 重置表单
 // eslint-disable-next-line no-unused-vars
-import reset from '@utils/common';
+import resetForm from '@utils/common';
+// 弹窗方法
 import { ElMessage } from 'element-plus';
+// store
 import store from '@store/index';
-import router from '@router/index';
+// 当前路由
 import { useRoute } from 'vue-router';
+// 路由
+import router from '@router/index';
 // 用户信息接口限制
 interface LoginFormFace {
 	username: string;
@@ -98,8 +103,8 @@ const login = (): void => {
 
 <style lang="scss">
 .login-container {
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	background: url('@assets/login/loginBg.jpg') center center no-repeat;
 	background-size: cover;
 	position: relative;

@@ -1,5 +1,5 @@
 <template>
-	<el-row>{{ $route.meta.title }}</el-row>
+	<div></div>
 </template>
 
 <script lang="ts" setup></script>

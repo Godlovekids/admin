@@ -12,7 +12,6 @@ import router, { errorRouter } from './router/index';
 import store from './store/index';
 // 设置
 import setting from './setting';
-
 // NProgress配置
 NProgress.configure({ showSpinner: false });
 // router开始

@@ -1,5 +1,5 @@
 // form重置
-const reset = (dom: HTMLFormElement | null) => {
-	dom!.value.resetFields();
+const resetForm = (dom: HTMLFormElement | null): void => {
+	dom!.resetFormFields();
 };
-export default reset;
+export default resetForm;

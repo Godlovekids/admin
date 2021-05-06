@@ -16,6 +16,7 @@ export const routes: RouteRecordRaw[] = [
 		component: () => import('@views/login/login.vue')
 	},
 	{
+		name: '/',
 		path: '/',
 		redirect: '/dashboard',
 		meta: {
@@ -53,7 +54,7 @@ export const routes: RouteRecordRaw[] = [
 		]
 	}
 ];
-
+// 通匹配路由
 export const errorRouter: RouteRecordRaw[] = [
 	{
 		path: '/:pathMatch(.*)*',

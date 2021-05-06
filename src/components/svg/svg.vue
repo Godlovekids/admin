@@ -1,5 +1,5 @@
 <template>
-	<svg aria-hidden="true" class="svg-icon">
+	<svg aria-hidden="true" class="svg-icon" :style="{ width: size, height: size }">
 		<use :xlink:href="symbolId" :fill="props.color" />
 	</svg>
 </template>
@@ -22,6 +22,10 @@ const props = defineProps({
 	color: {
 		type: String,
 		default: '#333'
+	},
+	size: {
+		type: String,
+		default: '1.6em'
 	}
 });
 // eslint-disable-next-line no-unused-vars
@@ -30,9 +34,6 @@ const symbolId = computed(() => `#${props.prefix}-${props.name}`);
 
 <style lang="scss">
 .svg-icon {
-	width: 1.6em;
-	height: 1.6em;
-	margin: 0 10px;
 	vertical-align: middle;
 }
 </style>

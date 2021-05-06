@@ -41,7 +41,7 @@ export function filterAsyncRoutes(routes: RouteRecordRaw[], idList: string[]): R
 	return res;
 }
 // 过滤隐藏的菜单，并提取单条的子菜单
-export function filterMenu(list: any[]) {
+export function filterMenu(list: any[]): RouteRecordRaw[] {
 	const f = (menuList: any[]) => {
 		const arr: any[] = [];
 		menuList

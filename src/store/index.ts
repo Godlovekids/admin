@@ -15,7 +15,7 @@ export interface State {
 }
 const store = defineStore({
 	id: 'main',
-	state() {
+	state: (): State => {
 		return {
 			// 展开状态
 			collapse: false,
@@ -25,19 +25,19 @@ const store = defineStore({
 			name: '',
 			// 权限路由
 			limitRoutes: []
-		} as State;
+		};
 	},
 	actions: {
-		login(loginData: { value: { username: string } }) {
+		login(loginData: { value: { username: string } }): Promise<void> {
 			this.name = loginData.value.username;
 			// 存储token
 			setToken(loginData.value.username);
 			return Promise.resolve();
 		},
-		setToken(token: string) {
+		setToken(token: string): void {
 			this.token = token;
 		},
-		setRoutes(token: string) {
+		setRoutes(token: string): Promise<Array<RouteRecordRaw>> {
 			const idList: string[] = [];
 			if (token === 'admin') {
 				idList.push('1', '2', '3');
@@ -48,7 +48,10 @@ const store = defineStore({
 			this.limitRoutes = routes;
 			return Promise.resolve(routes);
 		},
-		reset() {
+		changeCollapsed(): void {
+			this.collapse = !this.collapse;
+		},
+		reset(): void {
 			this.name = '';
 			this.token = '';
 			this.limitRoutes = [];

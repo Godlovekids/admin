@@ -1,9 +1,13 @@
 <template>
 	<!-- 多级 -->
-	<el-submenu v-if="menuList.children && menuList.children.length > 0" :index="menuList.path">
+	<el-submenu
+		v-if="menuList.children && menuList.children.length > 0"
+		:index="menuList.path"
+		popper-class="app-menu-submenu"
+	>
 		<template #title>
 			<svg-icon :name="menuList.meta?.icon" color="#ffffff"></svg-icon>
-			<span>{{ menuList.meta.title }}</span>
+			<span class="app-menu-title">{{ menuList.meta.title }}</span>
 		</template>
 		<el-menu-item-group>
 			<menu-item v-for="v in menuList.children" :key="v.path" :menu-list="v" />
@@ -13,7 +17,7 @@
 	<el-menu-item v-else :index="menuList.path">
 		<svg-icon :name="menuList.meta?.icon" color="#ffffff"></svg-icon>
 		<template #title>
-			{{ menuList.meta?.title }}
+			<span class="app-menu-title">{{ menuList.meta?.title }}</span>
 		</template>
 	</el-menu-item>
 </template>
