@@ -1,15 +1,18 @@
 <template>
-	<el-row class="height">{{ $route.meta.title }}</el-row>
-	<el-row>
-		<el-button type="primary">按钮</el-button>
-	</el-row>
+	<div class="workbench">
+		<el-row class="height">{{ $route.meta.title }}</el-row>
+		<el-row>
+			<el-button type="primary">按钮</el-button>
+		</el-row>
+	</div>
 </template>
 
 <script lang="ts" setup></script>
 
 <style lang="scss">
-.height {
-	height: 1200px;
-	// background-color: red;
+.workbench {
+	.height {
+		height: 800px;
+	}
 }
 </style>

@@ -6,7 +6,7 @@
 		popper-class="app-menu-submenu"
 	>
 		<template #title>
-			<svg-icon :name="menuList.meta?.icon" color="#ffffff"></svg-icon>
+			<svg-icon :name="menuList.meta?.icon"></svg-icon>
 			<span class="app-menu-title">{{ menuList.meta.title }}</span>
 		</template>
 		<el-menu-item-group>
@@ -15,7 +15,7 @@
 	</el-submenu>
 	<!-- 一级 -->
 	<el-menu-item v-else :index="menuList.path">
-		<svg-icon :name="menuList.meta?.icon" color="#ffffff"></svg-icon>
+		<svg-icon :name="menuList.meta?.icon"></svg-icon>
 		<template #title>
 			<span class="app-menu-title">{{ menuList.meta?.title }}</span>
 		</template>

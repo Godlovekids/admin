@@ -1,6 +1,6 @@
 // axios
 import axios from 'axios';
-// 消息确认 消息
+// 消息确认/消息
 import { ElMessageBox, ElMessage } from 'element-plus';
 // 商店
 import store from '@store/index';
@@ -8,13 +8,13 @@ import store from '@store/index';
 import { getToken, removeToken } from '@utils/auth';
 // 基础路径
 const baseURL = import.meta.env.VITE_BASEURL as string;
-//  封装请求
+// 封装请求
 const service = axios.create({
 	// 基础路径
 	baseURL,
 	// 跨域携带cookies
 	// withCredentials: true,
-	//  请求超时时间
+	// 请求超时时间
 	timeout: 5000
 });
 

@@ -9,15 +9,17 @@
 <script lang="ts" setup>
 import { watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
-
+// 面包屑数据限制
 interface BreadcrumbList {
 	name: string;
 	title: string;
 }
+// 面包屑数据
 // eslint-disable-next-line no-unused-vars
 const breadcrumbList = ref<BreadcrumbList[]>([]);
 // 不显示面包屑的导航
 const notShowBreadcrumbList = ['404'];
+// 当前路由
 const route = useRoute();
 // 监听路有变化并处理，面包屑数据
 watch(

@@ -42,7 +42,7 @@ import store from '@store/index';
 import { useRoute } from 'vue-router';
 // 路由
 import router from '@router/index';
-// 用户信息接口限制
+// 用户信息限制
 interface LoginFormFace {
 	username: string;
 	password: string;
@@ -72,6 +72,7 @@ onMounted(() => {
 // 登陆表单
 // eslint-disable-next-line no-unused-vars
 const loginForm = ref<HTMLFormElement | null>(null);
+// 验证规则
 // eslint-disable-next-line no-unused-vars
 const loginFormRules = {
 	username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
@@ -95,7 +96,7 @@ const login = (): void => {
 					throw new Error(error);
 				});
 		} else {
-			ElMessage('请填写用户信息');
+			ElMessage.warning('请填写用户信息');
 		}
 	});
 };
@@ -107,13 +108,10 @@ const login = (): void => {
 	height: 100vh;
 	background: url('@assets/login/loginBg.jpg') center center no-repeat;
 	background-size: cover;
-	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	.login-form {
-		position: absolute;
-		z-index: 2;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
 		width: 520px;
 		.login-title {
 			font-size: 26px;
@@ -138,6 +136,9 @@ const login = (): void => {
 				.el-input__icon {
 					color: #fff;
 				}
+			}
+			.svg-icon {
+				padding-left: 10px;
 			}
 		}
 		.login-button {

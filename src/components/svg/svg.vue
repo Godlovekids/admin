@@ -21,7 +21,7 @@ const props = defineProps({
 	// 颜色
 	color: {
 		type: String,
-		default: '#333'
+		default: '#fff'
 	},
 	size: {
 		type: String,

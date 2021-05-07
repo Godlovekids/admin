@@ -1,7 +1,10 @@
 <template>
-	<div></div>
+	<div class="airplay"></div>
 </template>
 
 <script lang="ts" setup></script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.airplay {
+}
+</style>

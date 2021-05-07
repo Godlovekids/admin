@@ -1,10 +1,8 @@
 <template>
 	<el-dropdown class="app-notice">
-		<div class="app-notice-head">
-			<el-badge :value="6" :max="99" type="danger">
-				<i class="el-icon-bell" />
-			</el-badge>
-		</div>
+		<el-badge :value="6" :max="99" type="danger">
+			<i class="el-icon-bell" />
+		</el-badge>
 		<template #dropdown>
 			<el-dropdown-menu class="app-notice-dropdown">
 				<el-tabs type="card">
@@ -21,14 +19,12 @@
 
 <style lang="scss">
 .app-notice {
-	vertical-align: top;
-	.app-notice-head {
-		padding: 12px 10px 4px;
-		.el-badge {
-			i {
-				cursor: pointer;
-				font-size: 20px;
-			}
+	padding-top: 16px;
+	margin: 0 10px;
+	.el-badge {
+		i {
+			cursor: pointer;
+			font-size: 20px;
 		}
 	}
 }

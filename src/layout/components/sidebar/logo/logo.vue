@@ -6,16 +6,12 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import store from '@store/index';
+// 展开状态标识
+// eslint-disable-next-line no-unused-vars
+import collapse from '@utils/data';
 // logo
 // eslint-disable-next-line no-unused-vars
 import logo from '@assets/logo/logo.png';
-// 展开状态标识
-// eslint-disable-next-line no-unused-vars
-const collapse = computed(() => {
-	return store().collapse;
-});
 </script>
 
 <style lang="scss">

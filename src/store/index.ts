@@ -5,7 +5,7 @@ import limitRoutes from '@router/routes';
 // 路由定义
 import type { RouteRecordRaw } from 'vue-router';
 // 过滤路由方法 设置token
-import { filterAsyncRoutes, setToken } from '@utils/auth';
+import { filterAsyncRoutes, setToken, removeToken } from '@utils/auth';
 // State接口限制
 export interface State {
 	collapse: boolean;
@@ -55,6 +55,7 @@ const store = defineStore({
 			this.name = '';
 			this.token = '';
 			this.limitRoutes = [];
+			removeToken();
 		}
 	}
 });
