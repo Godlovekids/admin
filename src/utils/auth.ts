@@ -1,5 +1,6 @@
 // 路由定义
 import type { RouteRecordRaw } from 'vue-router';
+import { onMounted } from 'vue';
 
 // token——————
 

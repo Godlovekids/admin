@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import store from '@store/index';
-import { computed } from '@vue/runtime-core';
+import { computed } from 'vue';
 // 用户名
 // eslint-disable-next-line no-unused-vars
 const name = computed(() => {

@@ -51,6 +51,9 @@ const store = defineStore({
 		changeCollapsed(): void {
 			this.collapse = !this.collapse;
 		},
+		setCollapse(collapse: boolean): void {
+			this.collapse = collapse;
+		},
 		reset(): void {
 			this.name = '';
 			this.token = '';

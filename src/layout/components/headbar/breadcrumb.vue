@@ -1,8 +1,11 @@
 <template>
 	<el-breadcrumb separator-class="el-icon-arrow-right">
-		<el-breadcrumb-item v-for="item in breadcrumbList" :key="item.name" :to="{ name: item.name }">{{
-			item?.title
-		}}</el-breadcrumb-item>
+		<el-breadcrumb-item
+			v-for="item in breadcrumbList"
+			:key="'b' + item.name"
+			:to="{ name: item.name }"
+			>{{ item?.title }}</el-breadcrumb-item
+		>
 	</el-breadcrumb>
 </template>
 
