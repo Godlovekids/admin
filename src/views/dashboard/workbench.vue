@@ -1,9 +1,6 @@
 <template>
 	<div class="workbench">
-		<el-row class="height">{{ $route.meta.title }}</el-row>
-		<el-row>
-			<el-button type="primary">按钮</el-button>
-		</el-row>
+		<el-row class="height-1000">{{ $route.meta.title }}</el-row>
 	</div>
 </template>
 
@@ -11,8 +8,8 @@
 
 <style lang="scss">
 .workbench {
-	.height {
-		height: 800px;
+	.height-1000 {
+		height: 1000px;
 	}
 }
 </style>

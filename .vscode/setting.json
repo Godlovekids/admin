@@ -1,0 +1,16 @@
+{
+  "workbench.startupEditor": "welcomePage",
+  "search.followSymlinks": false,
+  "terminal.integrated.cursorStyle": "line",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.linkedEditing": true,
+  "git.openAfterClone": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "terminal.integrated.tabs.location": "left"
+}

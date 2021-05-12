@@ -18,7 +18,7 @@ interface BreadcrumbList {
 // eslint-disable-next-line no-unused-vars
 const breadcrumbList = ref<BreadcrumbList[]>([]);
 // 不显示面包屑的导航
-const notShowBreadcrumbList = ['404'];
+const notShowBreadcrumbList = ['error'];
 // 当前路由
 const route = useRoute();
 // 监听路有变化并处理，面包屑数据

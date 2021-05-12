@@ -35,10 +35,10 @@ router.beforeEach(async (to, _from, next) => {
 				next();
 			} else {
 				const accessRoutes = await store().setRoutes(hasToken);
-				accessRoutes.concat(errorRouter);
+				const routes = accessRoutes.concat(errorRouter);
 				// eslint-disable-next-line no-plusplus
-				for (let i = 0; i < accessRoutes.length; i++) {
-					router.addRoute(accessRoutes[i] as RouteRecordRaw);
+				for (let i = 0; i < routes.length; i++) {
+					router.addRoute(routes[i] as RouteRecordRaw);
 				}
 				next({ ...to, replace: true });
 			}

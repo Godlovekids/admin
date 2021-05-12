@@ -1,5 +1,7 @@
 <template>
-	<div class="airplay"></div>
+	<div class="airplay">
+		<el-row>{{ $route.meta.title }}</el-row>
+	</div>
 </template>
 
 <script lang="ts" setup></script>

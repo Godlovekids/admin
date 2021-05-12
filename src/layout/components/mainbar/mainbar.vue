@@ -19,6 +19,7 @@
 	height: calc(100vh - 40px);
 	width: 100%;
 	background-color: #fff;
+	padding: 10px 0px 10px 10px;
 	overflow: hidden;
 }
 </style>
