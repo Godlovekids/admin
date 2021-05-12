@@ -8,6 +8,7 @@
 
 <style lang="scss">
 .workbench {
+	padding: 10px;
 	.height-1000 {
 		height: 1000px;
 	}

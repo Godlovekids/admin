@@ -8,5 +8,6 @@
 
 <style lang="scss">
 .analysis {
+	padding: 10px;
 }
 </style>

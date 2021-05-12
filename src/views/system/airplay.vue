@@ -8,5 +8,6 @@
 
 <style lang="scss">
 .airplay {
+	padding: 10px;
 }
 </style>
