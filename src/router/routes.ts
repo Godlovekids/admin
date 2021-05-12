@@ -8,24 +8,24 @@ const limitRoutes: RouteRecordRaw[] = [
 		name: 'system',
 		path: '/system',
 		component: Layout,
-		redirect: '/system/analysis',
+		redirect: '/system/editor',
 		meta: {
 			id: '1',
-			title: '系统管理',
+			title: '功能管理',
 			icon: 'system'
 		},
 		children: [
 			{
-				name: 'analysis',
-				path: '/system/analysis',
-				component: () => import('@views/system/analysis.vue'),
-				meta: { id: '2', title: '分析台', icon: 'analysis' }
+				name: 'editor',
+				path: '/system/editor',
+				component: () => import('@views/system/editor.vue'),
+				meta: { id: '2', title: '富文本', icon: 'editor' }
 			},
 			{
-				name: 'airplay',
-				path: '/system/airplay',
-				component: () => import('@views/system/airplay.vue'),
-				meta: { id: '3', title: '投屏器', icon: 'airplay' }
+				name: 'excel',
+				path: '/system/excel',
+				component: () => import('@views/system/excel.vue'),
+				meta: { id: '3', title: 'Excel', icon: 'excel' }
 			}
 		]
 	}

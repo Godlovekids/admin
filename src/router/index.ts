@@ -27,14 +27,14 @@ export const routes: RouteRecordRaw[] = [
 		name: 'dashboard',
 		path: '/dashboard',
 		component: Layout,
-		redirect: '/dashboard/workbench',
-		meta: { title: '仪表盘' },
+		redirect: '/dashboard/chart',
+		meta: { title: '导航' },
 		children: [
 			{
-				name: 'workbench',
-				path: '/dashboard/workbench',
-				meta: { title: '工作台', icon: 'workbench' },
-				component: () => import('@views/dashboard/workbench.vue')
+				name: 'chart',
+				path: '/dashboard/chart',
+				meta: { title: '图表', icon: 'chart' },
+				component: () => import('@views/dashboard/chart.vue')
 			}
 		]
 	},

@@ -1,6 +1,7 @@
 // 路由定义
 import type { RouteRecordRaw } from 'vue-router';
-import { onMounted } from 'vue';
+// Excel导出
+import XLSX from 'xlsx';
 
 // token——————
 
@@ -63,4 +64,30 @@ export function filterMenu(list: any[]): RouteRecordRaw[] {
 		return arr;
 	};
 	return f(list);
+}
+
+// 导出Excel
+export function exportExcel(
+	head: { label: string }[],
+	data: object[],
+	title: string = '表格',
+	name: string = '数据导出'
+): void {
+	// 表格数据
+	const tableData: any = [];
+	// 表头
+	const headData = ['序号', ...head.map((item: { label: string }) => item?.label)];
+	tableData.push(headData);
+	// 内容
+	data.forEach((item, index) => {
+		const rowData = [];
+		rowData.push(index + 1, ...Object.values(item));
+		tableData.push(rowData);
+	});
+	const ws = XLSX.utils.aoa_to_sheet(tableData);
+	const wb = XLSX.utils.book_new();
+	// 工作簿名称
+	XLSX.utils.book_append_sheet(wb, ws, title);
+	// 保存的文件名
+	XLSX.writeFile(wb, `${name}.xlsx`);
 }

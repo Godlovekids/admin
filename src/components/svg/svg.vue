@@ -23,6 +23,7 @@ const props = defineProps({
 		type: String,
 		default: '#fff'
 	},
+	// 大小
 	size: {
 		type: String,
 		default: '1.6em'
