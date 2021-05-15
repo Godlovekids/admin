@@ -8,7 +8,7 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
 	// 基础路径
-	base: '/',
+	base: './',
 	// 静态资源路径
 	publicDir: 'public',
 	// 插件
