@@ -2,7 +2,7 @@
 
 ## 其他技术:echarts + wangeditor + xlsx
 
-## 代码规范:editorConfig + prettier + esint
+## 代码规范:editorconfig + prettier + esint
 
 ## 代码校验和提交规范: husky + lint-staged + commitizen + commitlint
 
