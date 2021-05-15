@@ -1,6 +1,8 @@
 ## 主要技术:vue3 + typescript + vite + element-plus + sass + axios + vue-router + pinia([pinia](https://pinia.esm.dev/),[vuex5](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md))
 
-## 代码规范:editorConfig + prettier + esint(airbnb)
+## 其他技术:echarts + wangeditor + xlsx
+
+## 代码规范:editorConfig + prettier + esint
 
 ## 代码校验和提交规范: husky + lint-staged + commitizen + commitlint
 
