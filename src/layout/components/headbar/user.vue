@@ -6,7 +6,7 @@
 		/>
 		<el-dropdown>
 			<div>
-				<span class="app-name">{{ name || '匿名' }}</span>
+				<span class="app-name">{{ name || '未知' }}</span>
 				<i class="el-icon-arrow-down el-icon--right"></i>
 			</div>
 			<template #dropdown>

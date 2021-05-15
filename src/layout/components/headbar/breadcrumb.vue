@@ -26,7 +26,7 @@ const notShowBreadcrumbList = ['error'];
 const route = useRoute();
 // 监听路有变化并处理，面包屑数据
 watch(
-	route,
+	() => route.path,
 	() => {
 		breadcrumbList.value = [];
 		if (!(route.matched[0] && notShowBreadcrumbList.includes(route.matched[0].name as string))) {

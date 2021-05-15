@@ -4,7 +4,7 @@
 
 ## 代码校验和提交规范: husky + lint-staged + commitizen + commitlint
 
-## 生成更新日志: conventional-changelog-cli + cz-conventional-changelog
+## 生成更新日志: conventional-changelog-cli
 
 ## `<script setup>`
 

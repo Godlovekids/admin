@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 // svg依赖
 import viteSvgIcons from 'vite-plugin-svg-icons';
+// gzip压缩
+import viteCompression from 'vite-plugin-compression';
 import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,7 +19,8 @@ export default defineConfig({
 			iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
 			// 指定symbolId格式
 			symbolId: 'icon-[dir]-[name]'
-		})
+		}),
+		viteCompression()
 	],
 	// css配置
 	css: {
@@ -58,7 +61,7 @@ export default defineConfig({
 		// 代理
 		proxy: {
 			'/api': {
-				target: 'https://api.shop.eduwork.cn',
+				target: 'https://www.baidu.com',
 				changeOrigin: true,
 				rewrite: (src) => src.replace(/^\/api/, '')
 			}
